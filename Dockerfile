@@ -4,6 +4,7 @@ MAINTAINER Jiri Tyr
 ADD caddy /
 ADD data /data
 ADD Caddyfile /Caddyfile
+ADD .caddy /.caddy
 
 VOLUME /.caddy
 
