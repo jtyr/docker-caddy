@@ -10,4 +10,4 @@ VOLUME /.caddy
 
 EXPOSE 2015 80 443
 
-CMD ["/caddy", "-conf", "/Caddyfile", "-root", "/data"]
+ENTRYPOINT ["/caddy", "-conf", "/Caddyfile", "-root", "/data"]
