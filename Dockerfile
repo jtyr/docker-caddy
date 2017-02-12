@@ -5,6 +5,7 @@ ADD caddy /
 ADD data /data
 ADD Caddyfile /Caddyfile
 ADD .caddy /.caddy
+ADD ca-IdenTrust.crt /etc/ssl/certs/ca-certificates.crt
 
 VOLUME /.caddy
 
