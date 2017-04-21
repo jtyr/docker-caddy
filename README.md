@@ -22,6 +22,7 @@ The `caddy` file was created by building Caddy statically:
 ```
 $ go get github.com/mholt/caddy/caddy
 $ cd $GOPATH/src/github.com/mholt/caddy/caddy
+$ git pull origin master
 $ git checkout $(git describe --abbrev=0 --tags HEAD)
 $ CGO_ENABLED=0 ./build.bash
 $ sstrip -z caddy
