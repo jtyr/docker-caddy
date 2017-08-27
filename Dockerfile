@@ -8,6 +8,7 @@ RUN go get github.com/mholt/caddy/caddy
 WORKDIR /go/src/github.com/mholt/caddy/caddy
 RUN git checkout $(git describe --abbrev=0 --tags HEAD)
 RUN go get -d ./...
+RUN go get -d github.com/caddyserver/buildworker
 RUN go run build.go
 RUN /tmp/ELFkickers-3.0/sstrip/sstrip -z caddy
 
