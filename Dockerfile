@@ -1,16 +1,19 @@
 FROM golang AS builder
 
-ADD http://www.muppetlabs.com/~breadbox/pub/software/ELFkickers-3.1.tar.gz /tmp
-RUN tar -C /tmp -xf /tmp/ELFkickers-3.1.tar.gz
-RUN make -C /tmp/ELFkickers-3.1/
+ARG caddy_version=0.10.10
+ARG elfkickers_version=3.1
+
+ADD http://www.muppetlabs.com/~breadbox/pub/software/ELFkickers-${elfkickers_version}.tar.gz /tmp
+RUN tar -C /tmp -xf /tmp/ELFkickers-${elfkickers_version}.tar.gz
+RUN make -C /tmp/ELFkickers-${elfkickers_version}/
 
 RUN go get github.com/mholt/caddy/caddy
 WORKDIR /go/src/github.com/mholt/caddy/caddy
-RUN git checkout v0.10.10
+RUN git checkout v${caddy_version}
 RUN go get -d ./...
 RUN go get -d github.com/caddyserver/builds
 RUN go run build.go
-RUN /tmp/ELFkickers-3.1/sstrip/sstrip -z caddy
+RUN /tmp/ELFkickers-${elfkickers_version}/sstrip/sstrip -z caddy
 
 
 FROM scratch

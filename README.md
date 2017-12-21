@@ -9,33 +9,21 @@ which makes the container very small:
 
 ```
 $ docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-jtyr/caddy          latest              5d933fbf47c1        7 seconds ago       9.85 MB
+REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
+jtyr/caddy             latest              ae6b0f668182        5 seconds ago       11.3MB
 ```
 
 
 Usage
 -----
 
-The `caddy` file was created by building Caddy statically:
-
-```
-$ go get -u github.com/mholt/caddy/caddy
-$ cd $GOPATH/src/github.com/mholt/caddy/caddy
-$ git checkout $(git describe --abbrev=0 --tags HEAD)
-$ CGO_ENABLED=0 ./build.bash
-$ sstrip -z caddy
-$ git checkout master
-```
-
-Then just copy the `caddy` file into the directory where the `Dockerfile` sits
-and build the image:
+Build the image:
 
 ```
 $ docker build -t jtyr/caddy .
 ```
 
-Or skipp the building part and pull the data image directly from Docker Hub:
+Or pull the image directly from Docker Hub:
 
 ```
 $ docker pull jtyr/caddy
