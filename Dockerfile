@@ -1,6 +1,6 @@
 FROM golang AS builder
 
-ARG caddy_version=0.10.10
+ARG caddy_version=0.10.11
 ARG elfkickers_version=3.1
 
 ADD http://www.muppetlabs.com/~breadbox/pub/software/ELFkickers-${elfkickers_version}.tar.gz /tmp
