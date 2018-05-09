@@ -23,7 +23,7 @@ COPY --from=builder /go/src/github.com/mholt/caddy/caddy/caddy /
 ADD data /data
 ADD Caddyfile /Caddyfile
 ADD .caddy /.caddy
-ADD ca-IdenTrust.crt /etc/ssl/certs/ca-certificates.crt
+ADD DST_Root_CA_X3.pem /etc/ssl/certs/ca-certificates.crt
 
 VOLUME /.caddy
 
