@@ -23,6 +23,12 @@ Build the image:
 $ docker build -t jtyr/caddy .
 ```
 
+Build with additional plugins (e.g. `docker` and `tls.dns.exoscale`):
+
+```
+$ docker build -t jtyr/caddy --build-arg plugins='github.com/lucaslorentz/caddy-docker-proxy/plugin github.com/caddyserver/dnsproviders/exoscale' .
+```
+
 Or pull the image directly from Docker Hub:
 
 ```
