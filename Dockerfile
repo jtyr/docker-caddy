@@ -1,6 +1,6 @@
 FROM golang AS builder
 
-ARG caddy_version=0.10.14
+ARG caddy_version=0.11.0
 ARG elfkickers_version=3.1
 ARG plugins
 
