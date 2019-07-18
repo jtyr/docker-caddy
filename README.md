@@ -2,7 +2,7 @@ docker-caddy
 ============
 
 This is a `Dockerfile` which helps to create Docker container with minimalist
-HTTP server. The HTTP server is called [Caddy](https://github.com/mholt/caddy)
+HTTP server. The HTTP server is called [Caddy](https://github.com/caddyserver/caddy)
 and it's written in Go. This container is using statically compiled Caddy which
 means that there is only the `caddy` binarry plus few files in the container
 which makes the container very small:
